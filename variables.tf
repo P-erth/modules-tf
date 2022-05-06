@@ -11,16 +11,6 @@ variable "api_gateway_id" {
   default     = ""
 }
 
-variable "api_gateway_root_resource_id" {
-  description = "The parent resource id of the api gateway"
-  default     = ""
-}
-
-variable "resource_path" {
-  description = "A path to the resource"
-  default     = "path"
-}
-
 variable "request_method" {
   description = "The http request method, e.g: GET"
 }
@@ -50,6 +40,11 @@ variable "api_gateway_resource_id" {
 variable "api_gateway_resource_path" {
   description = "The path of your resource , if not specified one it is going to be created"
   default     = ""
+}
+
+variable "enable_lambda_permission" {
+  description = "Whether the lamba permission resource created or not. If another method already invoke this lambda this should be false"
+  default     = true
 }
 
 variable "module_dependency" {
